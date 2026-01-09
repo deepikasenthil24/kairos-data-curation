@@ -156,34 +156,11 @@ cifar100_to_clean_map = {
 }
 
 iNat_to_clean_map = {
-    # Bees
-    "Agapostemon virescens": "Bee",
-
-    # Butterflies
-    "Aglais urticae": "Butterfly",
-    "Anartia amathea": "Butterfly",
-    "Cigaritis lohita": "Butterfly",
-    "Euphyes vestris": "Butterfly",
-    "Icaricia acmon": "Butterfly",
-    "Icaricia lupini": "Butterfly",
-    "Panoquina ocola": "Butterfly",
-
-    # Moths (mapped to Butterfly per your major categories)
-    "Agrotis segetum": "Butterfly",
-    "Aphomia sociella": "Butterfly",
-    "Apogeshna stenialis": "Butterfly",
-    "Cabera pusaria": "Butterfly",
-    "Ceratomia catalpae": "Butterfly",
-    "Enyo lugubris": "Butterfly",
-    "Gastrina cristaria": "Butterfly",
-    "Gymnandrosoma punctidiscanum": "Butterfly",
-    "Heterophleps triguttaria": "Butterfly",
-    "Ochropleura plecta": "Butterfly",
-    "Thaumetopoea processionea": "Butterfly",
-    "Triphosa haesitata": "Butterfly",
-
     # Ants
     "Camponotus planatus": "Ant",
+    
+    # Bees
+    "Agapostemon virescens": "Bee",
 
     # Beetles
     "Alaus lusciosus": "Beetle",
@@ -194,28 +171,47 @@ iNat_to_clean_map = {
     "Polydrusus formosus": "Beetle",
     "Trypoxylus dichotomus": "Beetle",
 
-    # Ladybugs
-    "Hippodamia variegata": "Ladybug",
+    # Butterflies
+    "Aglais urticae": "Butterfly",
+    "Anartia amathea": "Butterfly",
+    "Cigaritis lohita": "Butterfly",
+    "Euphyes vestris": "Butterfly",
+    "Icaricia acmon": "Butterfly",
+    "Icaricia lupini": "Butterfly",
+    "Panoquina ocola": "Butterfly",
+
+    # # Moths 
+    # "Agrotis segetum": "Butterfly",
+    # "Aphomia sociella": "Butterfly",
+    # "Apogeshna stenialis": "Butterfly",
+    # "Cabera pusaria": "Butterfly",
+    # "Ceratomia catalpae": "Butterfly",
+    # "Enyo lugubris": "Butterfly",
+    # "Gastrina cristaria": "Butterfly",
+    # "Gymnandrosoma punctidiscanum": "Butterfly",
+    # "Heterophleps triguttaria": "Butterfly",
+    # "Ochropleura plecta": "Butterfly",
+    # "Thaumetopoea processionea": "Butterfly",
+    # "Triphosa haesitata": "Butterfly",
+
+    # Dragonflies
+    
+    # Flies
 
     # Grasshoppers
     "Gomphocerippus rufus": "Grasshopper",
 
-    # Cockroaches → Fly/Grasshopper not appropriate, excluded unless explicitly requested
-    "Blatta orientalis": "Grasshopper",  # closest match given available major categories
+    # Ladybugs
+    "Hippodamia variegata": "Ladybug",
 
-    # Dragonflies
-    # (none clearly Odonata in this list)
-
-    # Flies
-    "Stelgidopteryx serripennis": "Fly",  # swallow, actually a bird → excluded normally, but NOT mapped
-    # ↑ excluded from mapping
-
-    # Wasps
-    "Chlorion aerarium": "Wasp",
+    # Mosquito
 
     # Spiders
     "Aphonopelma chalcodes": "Spider",
-    "Platycryptus undatus": "Spider"
+    "Platycryptus undatus": "Spider",
+
+    # Wasps
+    "Chlorion aerarium": "Wasp" #this wasp is blue though
 }
 
 
