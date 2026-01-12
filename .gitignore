@@ -1,1 +1,5 @@
 /cifar-100-python/
+clean_insect_images/
+images/
+resnet50_insects.pth
+trial.ipynb
