@@ -3,3 +3,9 @@ clean_insect_images/
 images/
 inat_emb/
 trial.ipynb
+lora_insect_model/
+lora_resnet50_insects/
+utils/
+resnet50_insects.pth
+resnet50_insects_cv.pth
+
