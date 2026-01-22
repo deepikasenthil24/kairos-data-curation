@@ -1,5 +1,5 @@
 /cifar-100-python/
-clean_insect_images/
+#clean_insect_images/
 trial.ipynb
 lora_insect_model/
 lora_resnet50_insects/
@@ -13,3 +13,4 @@ labels.csv
 inat_images/
 inat_embs/
 clean_embs/
+embs/
