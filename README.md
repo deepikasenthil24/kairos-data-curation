@@ -18,7 +18,6 @@ The objective of this project is to develop and evaluate a KAIROS-based pipeline
         ├── eda.ipynb                 # exploring relevant datasets
         ├── load_cifar100.ipynb       # **Not sure if this is needed**
         └── Overlap_asessment.ipynb   # Assessing dataset sizes and overlap
-    ├── inat_images/                  # Folder of iNat images **should probably remove and just load from huggingface**
     ├── utils/                        # Label maps and Kairos functions
         ├── otdd/                     # Optimal transport dataset distance
             ├── pytorch/              # distance functions
@@ -28,16 +27,12 @@ The objective of this project is to develop and evaluate a KAIROS-based pipeline
         ├── overwrite_package.py      # overwrites bug in opendataval
         └── requirements.txt          # Kairos dependencies
     ├── baseline_resnet50.ipynb       # 
-    ├── embedding_extractor.ipynb     # generates image embeddings for iNat and clean data
-    ├── kairos_inat_valuation.ipynb   # Uses Kairos to curate iNat images based on clean data
+    ├── embedding_extractor.ipynb     # generates image embeddings for iNat and clean data: inat_embs/ and clean_embs/
+    ├── kairos_inat_valuation.ipynb   # Uses Kairos to curate iNat images for fine-tuning ResNet based on clean data. Will generate curated_embs.npy
     ├── README.md                     
     ├── resnet50_cifar-100.ipynb      # **Not sure if this is needed**
     ├── resnet50_insects_cv.pth       # 
-    ├── resnet50_insects.ipynb        # **Not sure if this is needed if we just use cv**
-    └── sample_clean_data.py          # Gets stratefied random sample of clean data 
+    ├── resnet50_insects.ipynb        # 
+    └── sample_clean_data.py          # Gets stratefied random sample of clean data to create the Kairos validation set
 
 ```
-
-TODO: 
-- Add info on what files need to be run to generate required files like embeddings etc.
-- Could make sample_clean_data.py adaptable to different sample sizes

@@ -10,6 +10,7 @@ sys.path.append(os.path.abspath('..'))
 #from utils.label_mappings import *
 from datasets import load_dataset
 
+# Could make sample_clean_data.py adaptable to different sample sizes
 
 # Generate subsampled clean/validation set
 base_path = 'clean_insect_images/'
