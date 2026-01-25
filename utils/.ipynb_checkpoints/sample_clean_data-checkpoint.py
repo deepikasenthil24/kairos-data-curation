@@ -13,7 +13,7 @@ from datasets import load_dataset
 # Could make sample_clean_data.py adaptable to different sample sizes
 
 # Generate subsampled clean/validation set
-base_path = 'clean_insect_images/'
+base_path = 'data/clean_insect_images/'
 
 class_dirs = ['Ant','Bee','Butterfly','Dragonfly','Fly','Grasshopper','Ladybug','Spider']
 
@@ -33,8 +33,9 @@ clean_df = pd.DataFrame({'label': clean_ds['label'], 'file_path': clean_ds['file
 #stratefied random sample 50 images from each category
 random_samples = np.array([])
 np.random.seed(1)
-for insect in ['Ant','Bee','Butterfly','Dragonfly','Fly','Grasshopper','Ladybug','Spider']: #clean_df.groupby('label').count().index.unique():
+for insect in ['Ant','Bee','Butterfly','Dragonfly','Fly','Grasshopper','Ladybug','Spider']:
     cur_sample = np.random.choice(clean_df[clean_df['label']==insect]['file_path'], 50)
-    random_samples = np.concatenate((random_samples,cur_sample), axis=0)
+    random_samples = np.concatenate((random_samples,cur_sample), axis=0) #use np to keep 1 dimensional
 
-sampled_clean_data = list(random_samples)
+kairos_clean_data = list(random_samples)
+test_clean_data = [file for file in clean_df['file_path'] if file not in kairos_clean_data]
