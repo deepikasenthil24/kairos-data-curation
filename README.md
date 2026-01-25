@@ -25,6 +25,7 @@ The objective of this project is to develop and evaluate a KAIROS-based pipeline
             ├── plotting.py           # Plotting funtions
             └── utils.py              # Supporting functions
         ├── custom_valuations.py      # KAIROS class
+        ├── label_mapping.py          # Includes iNat species to class mapping in iNat_to_clean_map
         ├── overwrite_package.py      # Overwrites bug in opendataval
         ├── requirements.txt          # KAIROS dependencies
         └── sample_clean_data.py      # Gets stratified random sample of clean data to create the KAIROS validation set
