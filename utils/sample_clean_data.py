@@ -8,7 +8,7 @@ import numpy as np
 sys.path.append(os.path.abspath('..'))
 
 #from utils.label_mappings import *
-from datasets import load_dataset
+#from datasets import load_dataset
 
 # Could make sample_clean_data.py adaptable to different sample sizes
 
@@ -19,11 +19,12 @@ class_dirs = ['Ant','Bee','Butterfly','Dragonfly','Fly','Grasshopper','Ladybug',
 
 clean_ds = {'image':[], 'label':[], 'file_path':[]}
 
+#only take label and full file path 
 for c in class_dirs:
     target_dir = os.path.join(base_path, c)
     image_files = os.listdir(target_dir)
     for f in image_files:
-        full_image_path = os.path.join(target_dir, f)
+        #full_image_path = os.path.join(target_dir, f)
         #clean_ds['image'].append(Image.open(full_image_path))
         clean_ds['label'].append(c)
         clean_ds['file_path'].append(full_image_path)
@@ -33,7 +34,7 @@ clean_df = pd.DataFrame({'label': clean_ds['label'], 'file_path': clean_ds['file
 #stratefied random sample 50 images from each category
 random_samples = np.array([])
 np.random.seed(1)
-for insect in ['Ant','Bee','Butterfly','Dragonfly','Fly','Grasshopper','Ladybug','Spider']:
+for insect in class_dirs:
     cur_sample = np.random.choice(clean_df[clean_df['label']==insect]['file_path'], 50)
     random_samples = np.concatenate((random_samples,cur_sample), axis=0) #use np to keep 1 dimensional
 
