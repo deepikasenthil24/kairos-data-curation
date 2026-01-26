@@ -26,3 +26,10 @@ kairos_clean_filepaths.txt
 test_clean_embeddings.npy
 test_clean_labels.npy
 test_clean_filepaths.txt
+
+
+# files currently used for embedding_distr notebook
+inat_embeddings.npy
+inat_labels.txt
+val_embeddings.npy
+val_labels.txt
