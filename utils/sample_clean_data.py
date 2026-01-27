@@ -24,7 +24,7 @@ for c in class_dirs:
     target_dir = os.path.join(base_path, c)
     image_files = os.listdir(target_dir)
     for f in image_files:
-        #full_image_path = os.path.join(target_dir, f)
+        full_image_path = os.path.join(target_dir, f)
         #clean_ds['image'].append(Image.open(full_image_path))
         clean_ds['label'].append(c)
         clean_ds['file_path'].append(full_image_path)
