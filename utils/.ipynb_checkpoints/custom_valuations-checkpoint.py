@@ -13,7 +13,7 @@ from typing import Optional
 
 
 class Kairos(DataEvaluator):
-    def __init__(self, lambda_weight=0.97, sigma_feature=3, kernel_type='sigma', unbiased=False):
+    def __init__(self, lambda_weight=1, sigma_feature=3, kernel_type='sigma', unbiased=False):
         """
         Args:
             lambda_weight (float): Weight for the residual squared term.
