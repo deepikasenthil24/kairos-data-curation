@@ -15,7 +15,7 @@ sys.path.append(os.path.abspath('..'))
 # Generate subsampled clean/validation set
 base_path = 'data/clean_insect_images/'
 
-class_dirs = ['Ant','Bee','Beetle','Butterfly','Dragonfly','Fly','Grasshopper','Ladybug','Spider']
+class_dirs = ['Ant','Bee','Beetle','Butterfly','Grasshopper','Ladybug','Spider']
 
 clean_ds = {'image':[], 'label':[], 'file_path':[]}
 

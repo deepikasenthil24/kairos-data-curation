@@ -56,7 +56,7 @@ iNat_to_clean_map = {
     "Platycryptus undatus": "Spider",
 
     # Wasps
-    "Chlorion aerarium": "Wasp" #this wasp is blue though
+    #"Chlorion aerarium": "Wasp" #this wasp is blue so we are leaving it out
 }
 
 
