@@ -29,7 +29,7 @@ The objective of this project is to develop and evaluate a KAIROS-based pipeline
         ├── overwrite_package.py      # Overwrites bug in opendataval
         ├── requirements.txt          # KAIROS dependencies
         └── sample_clean_data.py      # Gets stratified random sample of clean data to create the KAIROS validation set
-    ├── resnet50.ipynb                # Experiment for fine-tuning ResNet50 model via LoRA and partial freezing methods using different fine-tuning datasets
+    ├── resnet.ipynb                  # Experiment for fine-tuning ResNet50 model via LoRA and partial freezing methods using different fine-tuning datasets
     ├── embedding_extractor.ipynb     # Generates image embeddings for iNat and clean data: inat_embs/ and clean_embs/
     ├── kairos_inat_valuation.ipynb   # Uses KAIROS to curate iNat images for fine-tuning ResNet based on clean data. Will generate curated_embs.npy               
     └── README.md
