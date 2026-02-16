@@ -4,7 +4,28 @@ Quarter 2 Project for DSC180AB
 The objective of this project is to develop and evaluate a KAIROS-based pipeline for data valuation and curated fine-tuning, applied to an image classification task.
 
 * Our large “messy” dataset is the **iNaturalist dataset**, containing relevant samples of our target classes (insect species) as well as irrelevant data: https://github.com/visipedia/inat_comp/tree/master/2021
-* Our clean dataset will be the **Kaggle Insects Image dataset** with the desired insect images: https://www.kaggle.com/datasets/ismail703/insects/data
+* Our clean dataset is the **Kaggle Insects Image dataset** with the desired insect images: https://www.kaggle.com/datasets/ismail703/insects/data
+
+The kairos_inat_valuation.ipynb notebook requires a Python *3.9* environment
+
+```bash
+# Move to the Kairos directory to run the relevant files
+cd utils
+
+# Step 1: Install required packages from requirements.txt
+python3 -m pip install -r kairos_requirements.txt
+
+# Step 2: Install the benchmark tool opendataval
+python3 -m pip install --no-dependencies opendataval
+
+# Step 3: Fix the data-loading bug in the package by running the overwrite script
+python3 overwrite_package.py
+```
+
+embedding_extractor.ipynb requires a newer python version 3.11.9
+```bash
+python3 -m pip install -r emb_ex_requirements.txt
+```
 
 
 ### Project Structure
@@ -15,7 +36,7 @@ The objective of this project is to develop and evaluate a KAIROS-based pipeline
             ├── Ant/                  # Ant images
             ├── Bee/                  # Bee images
             └── ...                   # More images of different insect species organized into folders by class
-        └── embs/                     # Contains generated embeddings, labels, filepaths, and ids
+        └── embs/                     # Contains generated embeddings, labels, filepaths, and indexes
     ├── EDA/                          # Preliminary files
         ├── eda.ipynb                 # Exploring the clean Kaggle dataset
         └── overlap_asessment.ipynb   # Assessing dataset sizes and overlap
