@@ -22,7 +22,7 @@ python3 -m pip install --no-dependencies opendataval
 python3 overwrite_package.py
 ```
 
-embedding_extractor.ipynb requires a newer python version 3.11.9
+embedding_extractor.ipynb requires Python Version 3.11.9
 ```bash
 python3 -m pip install -r emb_ex_requirements.txt
 ```
@@ -50,8 +50,9 @@ python3 -m pip install -r emb_ex_requirements.txt
         ├── overwrite_package.py      # Overwrites bug in opendataval
         ├── requirements.txt          # KAIROS dependencies
         └── sample_clean_data.py      # Gets stratified random sample of clean data to create the KAIROS validation set
-    ├── final_resnet.ipynb                  # Experiment for fine-tuning ResNet50 model via LoRA and partial freezing methods using different fine-tuning datasets
+    ├── embedding_distribution.ipynb  # Generates plots to see the emebedding overlap between datasets and classes
     ├── embedding_extractor.ipynb     # Generates image embeddings for iNat and clean data: inat_embs/ and clean_embs/
+    ├── final_resnet.ipynb            # Experiment for fine-tuning ResNet-50 model via LoRA and partial freezing methods using different fine-tuning datasets
     ├── kairos_inat_valuation.ipynb   # Uses KAIROS to curate iNat images for fine-tuning ResNet based on clean data. Will generate curated_embs.npy               
     └── README.md
 
