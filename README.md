@@ -6,6 +6,8 @@ The objective of this project is to develop and evaluate a KAIROS-based pipeline
 * Our large “messy” dataset is the **iNaturalist dataset**, containing relevant samples of our target classes (insect species) as well as irrelevant data: https://github.com/visipedia/inat_comp/tree/master/2021
 * Our clean dataset is the **Kaggle Insects Image dataset** with the desired insect images: https://www.kaggle.com/datasets/ismail703/insects/data
 
+### A. Prerequisites
+
 The kairos_inat_valuation.ipynb notebook requires a Python *3.9* environment
 
 ```bash
@@ -28,7 +30,7 @@ python3 -m pip install -r emb_ex_requirements.txt
 ```
 
 
-### Project Structure
+### B. Project Structure
 ```
 └── kairos-data-curation/
     ├── data/                         # Where all data files and generated embeddings are stored
