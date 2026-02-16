@@ -31,8 +31,8 @@ python3 -m pip install -r emb_ex_requirements.txt
 ### Project Structure
 ```
 └── kairos-data-curation/
-    ├── data/                         # where all data files and generated embeddings are stored
-        ├── clean_insect_images/      # clean validation dataset from Kaggle
+    ├── data/                         # Where all data files and generated embeddings are stored
+        ├── clean_insect_images/      # Clean validation dataset from Kaggle
             ├── Ant/                  # Ant images
             ├── Bee/                  # Bee images
             └── ...                   # More images of different insect species organized into folders by class
