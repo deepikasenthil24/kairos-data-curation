@@ -1,0 +1,108 @@
+/* Class 1 (Reoffenders) - Light Red */
+.class1-header, .class1-data {
+  color: #721c24 !important;  /* Darker Red Text */
+}
+
+/* Class 0 (Non-Reoffenders) - Light Blue */
+.class0-header, .class0-data {
+  color: #0c5460 !important;  /* Darker Blue Text */
+}
+
+.card {
+  border-radius: 10px;
+}
+
+/* Custom colors */
+.text-primary {
+  color: #007bff !important;  /* Blue for Pre-processing */
+}
+
+.text-success {
+  color: #28a745 !important;  /* Green for Post-processing */
+}
+
+/* Accordion Button Styling */
+.accordion-button {
+  font-weight: bold;
+}
+
+#edaCanvas {
+  border-radius: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* Chart Container */
+.chart-container {
+  width: 550px; /* Fixed width */
+  height: 350px; /* Fixed height to match canvas height */
+  margin: auto;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Responsive Chart Adjustments */
+@media (max-width: 768px) {
+  .chart-container {
+    width: 380px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-container {
+    width: 230px;
+    height: 230px;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 5px;
+  font-size: 14px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.map-legend-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* Ensures responsiveness */
+  gap: 20px;
+}
+
+/* Legend container */
+.legend-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on small screens */
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  max-width: 700px; /* Prevents excessive stretching */
+  margin: 10px auto; /* Centers the legend */
+}
+
+/* Legend item (each color block and label) */
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Legend color boxes */
+.legend-item div {
+  width: 20px;
+  height: 20px;
+}
