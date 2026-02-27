@@ -1,6 +1,8 @@
 # kairos-data-curation
 Quarter 2 Project for DSC180AB
 
+**Link to website:** https://deepikasenthil24.github.io/efficient-fine-tuning-data-curation-kairos/
+
 The objective of this project is to develop and evaluate a KAIROS-based pipeline for data valuation and curated fine-tuning, applied to an image classification task.
 
 * Our large “messy” dataset is the **iNaturalist dataset**, containing relevant samples of our target classes (insect species) as well as irrelevant data: https://github.com/visipedia/inat_comp/tree/master/2021

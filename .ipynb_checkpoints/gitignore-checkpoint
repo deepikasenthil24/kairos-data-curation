@@ -31,3 +31,6 @@ inat_embeddings.npy
 inat_labels.txt
 val_embeddings.npy
 val_labels.txt
+
+
+data/noisy_images/

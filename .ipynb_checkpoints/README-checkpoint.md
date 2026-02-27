@@ -1,10 +1,14 @@
 # kairos-data-curation
 Quarter 2 Project for DSC180AB
 
+**Link to website:** https://deepikasenthil24.github.io/efficient-fine-tuning-data-curation-kairos/
+
 The objective of this project is to develop and evaluate a KAIROS-based pipeline for data valuation and curated fine-tuning, applied to an image classification task.
 
 * Our large “messy” dataset is the **iNaturalist dataset**, containing relevant samples of our target classes (insect species) as well as irrelevant data: https://github.com/visipedia/inat_comp/tree/master/2021
 * Our clean dataset is the **Kaggle Insects Image dataset** with the desired insect images: https://www.kaggle.com/datasets/ismail703/insects/data
+
+### A. Prerequisites
 
 The kairos_inat_valuation.ipynb notebook requires a Python *3.9* environment
 
@@ -22,16 +26,17 @@ python3 -m pip install --no-dependencies opendataval
 python3 overwrite_package.py
 ```
 
-embedding_extractor.ipynb requires a newer python version 3.11.9
+embedding_extractor.ipynb requires Python Version 3.11.9
+```bash
 python3 -m pip install -r emb_ex_requirements.txt
+```
 
 
-
-### Project Structure
+### B. Project Structure
 ```
 └── kairos-data-curation/
-    ├── data/                         # where all data files and generated embeddings are stored
-        ├── clean_insect_images/      # clean validation dataset from Kaggle
+    ├── data/                         # Where all data files and generated embeddings are stored
+        ├── clean_insect_images/      # Clean validation dataset from Kaggle
             ├── Ant/                  # Ant images
             ├── Bee/                  # Bee images
             └── ...                   # More images of different insect species organized into folders by class
@@ -49,8 +54,9 @@ python3 -m pip install -r emb_ex_requirements.txt
         ├── overwrite_package.py      # Overwrites bug in opendataval
         ├── requirements.txt          # KAIROS dependencies
         └── sample_clean_data.py      # Gets stratified random sample of clean data to create the KAIROS validation set
-    ├── final_resnet.ipynb                  # Experiment for fine-tuning ResNet50 model via LoRA and partial freezing methods using different fine-tuning datasets
+    ├── embedding_distribution.ipynb  # Generates plots to see the emebedding overlap between datasets and classes
     ├── embedding_extractor.ipynb     # Generates image embeddings for iNat and clean data: inat_embs/ and clean_embs/
+    ├── final_resnet.ipynb            # Experiment for fine-tuning ResNet-50 model via LoRA and partial freezing methods using different fine-tuning datasets
     ├── kairos_inat_valuation.ipynb   # Uses KAIROS to curate iNat images for fine-tuning ResNet based on clean data. Will generate curated_embs.npy               
     └── README.md
 
