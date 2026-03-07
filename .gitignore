@@ -38,3 +38,4 @@ data/noisy_images/noisy_images_6std
 data/noisy_images/noisy_images_3std
 
 __pycache__
+*/.ipynb_checkpoints/*
