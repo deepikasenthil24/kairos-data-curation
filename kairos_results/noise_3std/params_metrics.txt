@@ -1,0 +1,4 @@
+noise_rate: 0.4
+noise_std: 30.0
+n_samples: 5276
+n_noisy: 2110
