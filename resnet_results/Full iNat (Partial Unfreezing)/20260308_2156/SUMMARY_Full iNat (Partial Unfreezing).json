@@ -1,0 +1,9 @@
+{
+    "name": "Full iNat (Partial Unfreezing)",
+    "acc_mean": 0.6248411113128746,
+    "acc_std": 0.0,
+    "f1_mean": 0.6822990987735424,
+    "f1_std": 0.0,
+    "auc_mean": 0.9556287251475655,
+    "auc_std": 0.0
+}
