@@ -80,10 +80,10 @@ python3 -m pip install -r utils/experiments_requirements.txt
 ##### iii. Model Evaluation (ResNet Experiments):
 Use this command to execute the resnet_experiments.ipynb notebook:
 ```bash
-jupyter nbconvert --execute resnet_experiments.ipynb
+jupyter nbconvert --execute --to html src/resnet_experiments.ipynb
 
 # OR run the command below to also see verbose debug output to trace execution.
-jupyter nbconvert --to notebook --execute resnet_experiments.ipynb --debug
+jupyter nbconvert --to notebook --execute html src/resnet_experiments.ipynb --debug
 ```
 
 #### 3. Evaluation & Validation
