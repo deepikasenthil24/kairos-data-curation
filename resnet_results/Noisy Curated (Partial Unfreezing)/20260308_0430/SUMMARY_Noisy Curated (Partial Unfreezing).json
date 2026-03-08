@@ -1,0 +1,9 @@
+{
+    "name": "Noisy Curated (Partial Unfreezing)",
+    "acc_mean": 0.7879063010713637,
+    "acc_std": 0.0,
+    "f1_mean": 0.7848497856870406,
+    "f1_std": 0.0,
+    "auc_mean": 0.9673303095237273,
+    "auc_std": 0.0
+}
