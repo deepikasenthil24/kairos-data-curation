@@ -1,38 +1,18 @@
-# kairos-data-curation
+# Data Valuation for Curated Fine-Tuning using KAIROS
 Quarter 2 Project for DSC180AB
 
-**Link to website:** https://deepikasenthil24.github.io/efficient-fine-tuning-data-curation-kairos/
-
-The objective of this project is to develop and evaluate a KAIROS-based pipeline for data valuation and curated fine-tuning, applied to an image classification task.
-
-* Our large “messy” dataset is the **iNaturalist dataset**, containing relevant samples of our target classes (insect species) as well as irrelevant data: https://github.com/visipedia/inat_comp/tree/master/2021
-* Our clean dataset is the **Kaggle Insects Image dataset** with the desired insect images: https://www.kaggle.com/datasets/ismail703/insects/data
-
-### A. Prerequisites
-
-The kairos_inat_valuation.ipynb notebook requires a Python *3.9* environment
-
-```bash
-# Move to the Kairos directory to run the relevant files
-cd utils
-
-# Step 1: Install required packages from requirements.txt
-python3 -m pip install -r kairos_requirements.txt
-
-# Step 2: Install the benchmark tool opendataval
-python3 -m pip install --no-dependencies opendataval
-
-# Step 3: Fix the data-loading bug in the package by running the overwrite script
-python3 overwrite_package.py
-```
-
-embedding_extractor.ipynb requires Python Version 3.11.9
-```bash
-python3 -m pip install -r emb_ex_requirements.txt
-```
+**Website:** https://deepikasenthil24.github.io/efficient-fine-tuning-data-curation-kairos/
 
 
-### B. Project Structure
+This repository implements a data curation pipeline using KAIROS to identify high-utility samples from "noisy" datasets, allowing for more efficient model training. We demonstrate this by curating the iNaturalist dataset to improve the fine-tuning of a ResNet-50 model on a target Insects classification task.
+
+
+### A. Dataset Context
+* Large “messy” dataset: The [**iNaturalist dataset**](https://github.com/visipedia/inat_comp/tree/master/2021), containing relevant samples of our target classes (insect species) as well as significant amounts of irrelevant or "noisy" data.
+* Clean validation dataset: The [**Kaggle Insects Image dataset**](https://www.kaggle.com/datasets/ismail703/insects/data), which contains the desired high-quality insect images used to define our target distribution.
+
+
+### B. Repository Organization TBD
 ```
 └── kairos-data-curation/
     ├── data/                         # Where all data files and generated embeddings are stored
@@ -61,3 +41,60 @@ python3 -m pip install -r emb_ex_requirements.txt
     └── README.md
 
 ```
+
+### C. Project Setup
+
+#### 1. Installation
+
+Step 1: Embedding Extraction (Python 3.11.9)
+
+```bash
+# Install dependices for generating CLIP embeddings and initial data processing
+python3 -m pip install -r utils/emb_ex_requirements.txt
+```
+
+Step 2: Data Valuation (Python 3.9)
+
+```bash
+# Install KAIROS dependencies
+python3 -m pip install -r utils/kairos_requirements.txt
+
+# Install the benchmark tool opendataval
+python3 -m pip install --no-dependencies opendataval
+
+# Fix the data-loading bug in the package by running the overwrite script
+python3 utils/overwrite_package.py # Fixes data-loading bugs in opendataval
+```
+
+Step 3: ResNet Experiments (Python 3.11)
+
+```bash
+# Step 3: Install dependencies for ResNet-50 fine-tuning and evaluation
+python3 -m pip install -r utils/experiments_requirements.txt
+```
+
+#### 2. Execution Flow
+
+...
+
+##### iii. Model Evaluation (ResNet Experiments):
+Use this command to execute the resnet_experiments.ipynb notebook:
+```bash
+jupyter nbconvert --execute resnet_experiments.ipynb
+
+# OR run the command below to also see verbose debug output to trace execution.
+jupyter nbconvert --to notebook --execute resnet_experiments.ipynb --debug
+```
+
+#### 3. Evaluation & Validation
+* Metrics: We utilize Accuracy, F1-Score, AUC, and train time to evaluate model performance.
+* Validation: Curation quality is validated by measuring the ....something about kairos plot on poster
+* Experiment Tracking: All runs are timestamped and logged in the results/ folders to ensure reproducibility and prevent data loss.
+
+#### 4. Forward Roadmap
+* Apply the valuation framework to other "messy" domains beyond iNaturalist (e.g., medical imaging or satellite data).
+* Test KAIROS performs with increased label noise.
+
+
+
+
