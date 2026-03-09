@@ -89,17 +89,17 @@ python3 -m pip install -r utils/experiments_requirements.txt
 
 #### 2. Execution Flow
 Run the following notebooks:
-1. insect_image_noisifer.ipynb
+**1. insect_image_noisifer.ipynb**
 * Generates a corrupted version of the iNaturalist dataset by injecting Gaussian noise at controlled intensities ($30\sigma, 60\sigma, 90\sigma$). It outputs a set of labeled noisy image paths or augmented image tensors used to stress-test the curation's resilience.
   
-2. embedding_extractor.ipynb
+**2. embedding_extractor.ipynb**
 * Processes both the clean Kaggle and noisy iNaturalist images through a CLIP-ViT-L-14 backbone. It saves high-dimensional feature vectors as .npy files in the data/embs/ directory, which serve as the mathematical input for the valuation algorithm.
 
-3. kairos_inat_valuation.ipynb
+**3. kairos_inat_valuation.ipynb**
 * Performs the MMD-based distribution comparison to rank every iNaturalist sample. Outputs .npy files ranked indices, effectively identifying the high-utility samples within the noisy set.
 * If cell 5 kills the kernel due to RAM limtations, try reducing the INAT_SUB_SIZE
 
-4. resnet_experiments.ipynb (optional: terminal command documented below)
+**4. resnet_experiments.ipynb** (optional: terminal command documented below)
 
 
 ##### iii. Model Evaluation (ResNet Experiments):
