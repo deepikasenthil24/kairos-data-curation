@@ -87,8 +87,14 @@ Step 3: ResNet Experiments (Python 3.11)
 python3 -m pip install -r utils/experiments_requirements.txt
 ```
 
+This project requires two primary environments: one for data valuation (KAIROS) and one for model training and experiments
+1. **Data Valuation & KAIROS Pipeline:** torch: 2.2.2, torchvision: 0.17.2, geomloss: 0.2.6, pykeops: 2.1.2, pot (Python Optimal Transport): 0.9.5, pandera: 0.19.3, scikit-learn: 1.5.0, numpy: 1.26.4, pandas: 1.5.3, matplotlib: 3.9.0, seaborn: 0.13.2
+2. **Fine-Tuning & Model Experiments:** torch: 2.7.1+cu118, torchvision: 0.22.1+cu118, peft: 0.18.1, transformers: 4.41.2, datasets: 4.5.0, numpy: 1.26.4, pandas: 2.2.3, scikit-learn: 1.4.2, matplotlib: 3.8.4, pillow: 10.4.0
+
+
 #### 2. Execution Flow
 Run the following notebooks:
+
 **1. insect_image_noisifer.ipynb**
 * Generates a corrupted version of the iNaturalist dataset by injecting Gaussian noise at controlled intensities ($30\sigma, 60\sigma, 90\sigma$). It outputs a set of labeled noisy image paths or augmented image tensors used to stress-test the curation's resilience.
   
