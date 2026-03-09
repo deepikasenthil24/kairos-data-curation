@@ -1,0 +1,9 @@
+noise_rate: 0.4
+noise_std: 90.0
+n_samples: 5276
+n_noisy: 2110
+Kairos Runtime: 2.691401958465576 seconds
+Accuracy: 0.9109
+Precision: 0.9493
+Recall: 0.8996
+F1 Score: 0.9238

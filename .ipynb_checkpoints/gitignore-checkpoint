@@ -11,27 +11,9 @@ images/
 train.csv
 val.csv
 labels.csv
+
+# too large to push: 148.9 MB
 inat_embeddings.npy
-inat_labels.npy
-
-inat_noisy_indexes.npy
-inat_noisy_indexes.npy
-inat_row_ids.txt
-
-kairos_clean_embeddings.npy
-kairos_clean_labels.npy
-kairos_clean_filepaths.txt
-test_clean_embeddings.npy
-test_clean_labels.npy
-test_clean_filepaths.txt
-
-
-# files currently used for embedding_distr notebook
-inat_embeddings.npy
-inat_labels.txt
-val_embeddings.npy
-val_labels.txt
-
 
 data/noisy_images/noisy_images_9std
 data/noisy_images/noisy_images_6std
