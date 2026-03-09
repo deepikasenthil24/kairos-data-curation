@@ -7,6 +7,12 @@ Quarter 2 Project for DSC180AB
 This repository implements a data curation pipeline using KAIROS to identify high-utility samples from "noisy" datasets, allowing for more efficient model training. We demonstrate this by curating the iNaturalist dataset to improve the fine-tuning of a ResNet-50 model on a target Insects classification task.
 
 
+## Problem Description
+Modern machine learning models like **ResNet-50** rely on massive datasets for fine-tuning. However, real-world datasets like **iNaturalist** are often "messy," containing poisoned, mislabeled, or noisy samples that degrade model performance and trustworthiness.
+
+Training on these full datasets is computationally expensive and inefficient. ML engineers currently lack scalable, automated methods to distinguish between high-value samples that drive performance and low-quality data that introduces feature interference. This project addresses the need for a **model-agnostic data valuation** approach, using **KAIROS** to curate high-utility subsets. By identifying the most impactful data points, we maintain model performance while achieving a **93.6% reduction in training time.**
+
+
 ### A. Dataset Context
 * Large “messy” dataset: The [**iNaturalist dataset**](https://github.com/visipedia/inat_comp/tree/master/2021), containing relevant samples of our target classes (insect species) as well as significant amounts of irrelevant or "noisy" data.
 * Clean validation dataset: The [**Kaggle Insects Image dataset**](https://www.kaggle.com/datasets/ismail703/insects/data), which contains the desired high-quality insect images used to define our target distribution.
