@@ -19,6 +19,24 @@ Training on these full datasets is computationally expensive and inefficient. ML
 
 
 ### C. Repository Organization
+
+```
+└── kairos-data-curation/
+    ├── data/                         # Where all data files and generated embeddings are stored
+    |    ├── clean_insect_images/      # Clean validation dataset from Kaggle
+    |    |            ├── Ant/          # Ant images
+    |    |            ├── Bee/          # Bee images
+    |    |            └── ...           # More images of different insect species organized into folders by class
+    │   ├── embs/                     # Contains generated embeddings, labels, and indexes
+    │   ├── kairos_output/            #
+    │   ├── noisy_images/             # 
+    ├── EDA/                          # Preliminary files
+        ├── eda.ipynb                 # Exploring the clean Kaggle dataset
+         ├── embedding_distribution.ipynb  # Generates plots to see the emebedding overlap between datasets and classes
+        └── overlap_asessment.ipynb   # Assessing dataset sizes and overlap
+```
+
+
 ```
 └── kairos-data-curation/
     ├── data/                         # Where all data files and generated embeddings are stored
@@ -97,7 +115,7 @@ jupyter nbconvert --to notebook --execute html src/resnet_experiments.ipynb --de
 * Validation: Curation quality is validated by measuring the ....something about kairos plot on poster
 * Experiment Tracking: All runs are timestamped and logged in the results/ folders to ensure reproducibility and prevent data loss.
 
-### E.Forward Roadmap
+### E. Forward Roadmap
 We are actively working to expand the utility of KAIROS-based curation. Our current development focus includes:
 * Adapting the MMD-based valuation pipeline for text-based Large Language Models (LLMs) beyond Computer Vision.
 * Extending testing to more complex datasets (e.g., medical imaging or satellite data) to further validate model-agnosticism.
