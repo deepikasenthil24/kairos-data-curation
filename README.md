@@ -39,7 +39,7 @@ Training on these full datasets is computationally expensive and inefficient. ML
         ├── insect_image_noisifier.ipynb        # Adds Gaussian noise to insect images
         ├── embedding_extractor.ipynb           # Generates image embeddings for iNaturalist and validation datasets
         ├── kairos_inat_valuation.ipynb         # Uses KAIROS to curate iNat images for fine-tuning ResNet based on clean data
-        └── resnet_experiments.ipynb            # Experiment for fine-tuning ResNet-50 model via LoRA and partial freezing methods using different fine-tuning datasets
+        └── resnet_experiments.ipynb            # Experiment for fine-tuning ResNet-50 model via LoRA and partial freezing methods using different fine-tuning datasets (testing notebook)
     ├── utils/                                  # Label maps and KAIROS functions
         ├── otdd/                               # Optimal transport dataset distance
             ├── pytorch/                        # Distance functions
@@ -58,9 +58,9 @@ Training on these full datasets is computationally expensive and inefficient. ML
 
 #### 1. Installation
 
-Create separate environments for different steps to run each script
+Create separate environments (Python 3.11.9, Python 3.9) for different steps to run each script:
 
-Steps 1 & 2: Image Noisification & Embedding Extraction (Python 3.11.9)
+Step 1: Image Noisification & Embedding Extraction (Python 3.11.9)
 
 ```bash
 # Install dependices for generating CLIP embeddings and initial data processing
@@ -88,11 +88,18 @@ python3 -m pip install -r utils/experiments_requirements.txt
 ```
 
 #### 2. Execution Flow
-
+Run the following notebooks:
 1. insect_image_noisifer.ipynb
+* Generates a corrupted version of the iNaturalist dataset by injecting Gaussian noise at controlled intensities ($30\sigma, 60\sigma, 90\sigma$). It outputs a set of labeled noisy image paths or augmented image tensors used to stress-test the curation's resilience.
+  
 2. embedding_extractor.ipynb
+* Processes both the clean Kaggle and noisy iNaturalist images through a CLIP-ViT-L-14 backbone. It saves high-dimensional feature vectors as .npy files in the data/embs/ directory, which serve as the mathematical input for the valuation algorithm.
+
 3. kairos_inat_valuation.ipynb
-4. resnet_experiments.ipynb
+* Performs the MMD-based distribution comparison to rank every iNaturalist sample. Outputs .npy files ranked indices, effectively identifying the high-utility samples within the noisy set.
+
+4. resnet_experiments.ipynb (optional: terminal command documented below)
+
 
 ##### iii. Model Evaluation (ResNet Experiments):
 Use this command to execute the resnet_experiments.ipynb notebook:
@@ -102,10 +109,11 @@ jupyter nbconvert --execute --to html src/resnet_experiments.ipynb
 # OR run the command below to also see verbose debug output to trace execution.
 jupyter nbconvert --to notebook --execute html src/resnet_experiments.ipynb --debug
 ```
+The resnet_experiments.ipynb notebook logs results directly to notebook cells and archives all artifacts within the resnet_results/ directory. For organized tracking, each run generates a dedicated folder named by the Experiment Name, with a sub-folder containing the execution timestamp. The following outputs are generated: Performance Metrics (captured logs for accuracy, AUC, weighted F1 scores, and both training and test times) and Performance Plots (Confusion matrices and scaling plots for Metric vs. Data Size)
+
 
 #### 3. Evaluation & Validation
 * Metrics: We utilize Accuracy, F1-Score, AUC, and train time to evaluate model performance.
-* Validation: Curation quality is validated by measuring the ....something about kairos plot on poster
 * Experiment Tracking: All runs are timestamped and logged in the results/ folders to ensure reproducibility and prevent data loss.
 
 ### E. Forward Roadmap
