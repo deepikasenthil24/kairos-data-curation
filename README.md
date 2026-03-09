@@ -97,6 +97,7 @@ Run the following notebooks:
 
 3. kairos_inat_valuation.ipynb
 * Performs the MMD-based distribution comparison to rank every iNaturalist sample. Outputs .npy files ranked indices, effectively identifying the high-utility samples within the noisy set.
+* If cell 5 kills the kernel due to RAM limtations, try reducing the INAT_SUB_SIZE
 
 4. resnet_experiments.ipynb (optional: terminal command documented below)
 
