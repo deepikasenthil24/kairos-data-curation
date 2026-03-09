@@ -14,29 +14,11 @@ Training on these full datasets is computationally expensive and inefficient. ML
 
 
 ### B. Dataset Context
-* Large “messy” dataset: The [**iNaturalist dataset**](https://github.com/visipedia/inat_comp/tree/master/2021), containing relevant samples of our target classes (insect species) as well as significant amounts of irrelevant or "noisy" data.
-* Clean validation dataset: The [**Kaggle Insects Image dataset**](https://www.kaggle.com/datasets/ismail703/insects/data), which contains the desired high-quality insect images used to define our target distribution.
+* Large “messy” dataset: The [**iNaturalist dataset**](https://github.com/visipedia/inat_comp/tree/master/2021), containing relevant samples of our target classes (insect species) as well as significant amounts of irrelevant or "noisy" data (currently integrated via the Hugging Face API for automated ingestion and streaming directly into the pipeline).
+* Clean validation dataset: The [**Kaggle Insects Image dataset**](https://www.kaggle.com/datasets/ismail703/insects/data), which contains the desired high-quality insect images used to define our target distribution (clean_insect_images folder currently maintained within the local /data/ directory).
 
 
 ### C. Repository Organization
-<!-- 
-```
-└── kairos-data-curation/
-    ├── data/                         # Where all data files and generated embeddings are stored
-    |    ├── clean_insect_images/      # Clean validation dataset from Kaggle
-    |    |            ├── Ant/          # Ant images
-    |    |            ├── Bee/          # Bee images
-    |    |            └── ...           # More images of different insect species organized into folders by class
-    │   ├── embs/                     # Contains generated embeddings, labels, and indexes
-    │   ├── kairos_output/            #
-    │   ├── noisy_images/             # 
-    ├── EDA/                          # Preliminary files
-        ├── eda.ipynb                 # Exploring the clean Kaggle dataset
-         ├── embedding_distribution.ipynb  # Generates plots to see the emebedding overlap between datasets and classes
-        └── overlap_asessment.ipynb   # Assessing dataset sizes and overlap
-``` -->
-
-
 ```
 └── kairos-data-curation/
     ├── data/                                   # Where all data files and generated embeddings are stored
@@ -44,11 +26,20 @@ Training on these full datasets is computationally expensive and inefficient. ML
             ├── Ant/                            # Ant images
             ├── Bee/                            # Bee images
             └── ...                             # More images of different insect species organized into folders by class
-        └── embs/                               # Contains generated embeddings, labels, filepaths, and indexes
+        ├── embs/                               # Contains generated embeddings, labels, filepaths, and indexes
+        ├── noisy_images/                       # Noisified index mappings (3std, 6std, 9std)
+        └── kairos_output/                      # KAIROS valuation and curation indices
     ├── eda/                                    # Preliminary files
-        ├── eda.ipynb                           # Exploring the clean Kaggle dataset
-        ├── embedding_distribution.ipynb        # Generates plots to see the emebedding overlap between datasets and classes
-        └── overlap_asessment.ipynb             # Assessing dataset sizes and overlap
+        ├── eda.ipynb                           # Explores the clean Kaggle dataset
+        ├── embedding_distribution.ipynb        # Generates plots to see the embedding overlap between datasets and classes
+        └── overlap_asessment.ipynb             # Assesses dataset sizes and overlap
+    ├── kairos_results/                         # Valuation visualizations & metrics
+    ├── resnet_results/                         # Experiment logs (LoRA, Unfreezing)
+    ├── src/                                    # Core pipeline notebooks
+        ├── insect_image_noisifier.ipynb        # Adds Gaussian noise to insect images
+        ├── embedding_extractor.ipynb           # Generates image embeddings for iNaturalist and validation datasets
+        ├── kairos_inat_valuation.ipynb         # Uses KAIROS to curate iNat images for fine-tuning ResNet based on clean data
+        └── resnet_experiments.ipynb            # Experiment for fine-tuning ResNet-50 model via LoRA and partial freezing methods using different fine-tuning datasets
     ├── utils/                                  # Label maps and KAIROS functions
         ├── otdd/                               # Optimal transport dataset distance
             ├── pytorch/                        # Distance functions
@@ -59,11 +50,6 @@ Training on these full datasets is computationally expensive and inefficient. ML
         ├── overwrite_package.py                # Overwrites bug in opendataval
         ├── requirements.txt                    # KAIROS dependencies
         └── sample_clean_data.py                # Gets stratified random sample of clean data to create the KAIROS validation set
-    ├── src/
-        ├── insect_image_noisifier.ipynb        # Adds gaussian noise to insect images
-        ├── embedding_extractor.ipynb           # Generates image embeddings for iNat and validation datasets
-        ├── kairos_inat_valuation.ipynb         # Uses KAIROS to curate iNat images for fine-tuning ResNet based on clean data.
-        ├── resnet_experiments.ipynb            # Experiment for fine-tuning ResNet-50 model via LoRA and partial freezing methods using different fine-tuning datasets               
     └── README.md
 
 ```
